@@ -5,7 +5,7 @@
 body {
   background-color: seashell;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 0;
 }
 
@@ -39,22 +39,6 @@ h2 {
   position: absolute;
   top: 35%;
   left: 10%;
-}
-
-.transactions-income {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: 30%;
-  right: 67.5%;
-}
-
-.transactions-expense {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  bottom: 30%;
-  left: 67%;
 }
 
 .submit {
@@ -96,7 +80,7 @@ h2 {
   border: none;
   cursor: pointer;
   position: absolute;
-  right: 0;
+  right: -30px;
 }
 
 .delete-btn:focus {
@@ -124,18 +108,50 @@ h2 {
   color: red;
 }
 
-.transaction-list.income {
+.transaction.income {
   background-color: mediumseagreen;
   border-radius: 5px;
-  margin: 0 auto;
+  padding: 5px 10px;
+  margin-bottom: 1rem;
+  list-style-type: none;
+}
+
+.transaction.expense {
+  background-color: tomato;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 1rem;
+  list-style-type: none;
+}
+
+.transactions-income {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 30%;
+  right: 68%;
+}
+
+.transactions-expense {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 30%;
+  left: 67%;
+}
+
+.transaction-list.income {
+  position: absolute;
+  top: 50px;
+  left: 60px;
   padding: 5px 10px;
   color: white;
 }
 
 .transaction-list.expense {
-  background-color: tomato;
-  border-radius: 5px;
-  margin: 0 auto;
+  position: absolute;
+  top: 50px;
+  left: 60px;
   padding: 5px 10px;
   color: white;
 }

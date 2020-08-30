@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 
 const IncomeList = () => {
+  const { incomeTransactions } = useContext(GlobalContext);
+
+  console.log(incomeTransactions);
   return (
     <div className="transactions transactions-income">
-      <h2>Transaction History</h2>
+      <h2 className="transaction-history">Transaction History</h2>
       <ul className="transaction-list income">
-        <li className="transaction">
-          <span className="transaction-text">Salary:</span>
-          <span style={{ marginLeft: "10px" }} className="transaction-amount">
-            $5000
-          </span>
-          <button className="delete-btn">
-            <i className="fas fa-trash"></i>
-          </button>
-        </li>
+        {incomeTransactions.map((incomeTransaction) => (
+          <li className="transaction income">
+            <span className="transaction-text">
+              {incomeTransaction.incomeText}:
+            </span>
+            <span style={{ marginLeft: "10px" }} className="transaction-amount">
+              ${incomeTransaction.incomeAmount}
+            </span>
+            <button className="delete-btn">
+              <i className="fas fa-trash"></i>
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );
