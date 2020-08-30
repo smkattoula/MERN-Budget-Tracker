@@ -1,46 +1,58 @@
 import React from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 
 const AddTransaction = () => {
   return (
     <div className="form-wrapper">
       <Form>
         <FormGroup className="input-group income">
-          <Label for="transactionName">Name</Label>
+          <Label className="label" for="transactionName">
+            Name
+          </Label>
           <Input
+            style={{ width: "30%", borderRadius: "5px" }}
             type="text"
             name="name"
             id="transactionName"
             placeholder="Add Income.."
           />
-          <Label for="transactionAmount">Amount</Label>
+          <Label className="label" for="transactionAmount">
+            Amount
+          </Label>
           <Input
+            style={{ width: "30%", borderRadius: "5px" }}
             type="number"
             name="amount"
             id="transactionAmount"
             placeholder="Add Amount.."
           />
-          <Button>Submit</Button>
+          <button className="submit income">Submit</button>
         </FormGroup>
       </Form>
 
       <Form>
         <FormGroup className="input-group expense">
-          <Label for="transactionName">Name</Label>
+          <Label className="label" for="transactionName">
+            Name
+          </Label>
           <Input
+            style={{ width: "30%", borderRadius: "5px" }}
             type="text"
             name="name"
             id="transactionName"
             placeholder="Add Expense.."
           />
-          <Label for="transactionAmount">Amount</Label>
+          <Label className="label" for="transactionAmount">
+            Amount
+          </Label>
           <Input
+            style={{ width: "30%", borderRadius: "5px" }}
             type="number"
             name="amount"
             id="transactionAmount"
             placeholder="Add Amount.."
           />
-          <Button>Submit</Button>
+          <button className="submit expense">Submit</button>
         </FormGroup>
       </Form>
     </div>

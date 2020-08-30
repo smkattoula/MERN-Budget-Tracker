@@ -1,17 +1,18 @@
 import React from "react";
-import { Button } from "reactstrap";
 
 const IncomeList = () => {
   return (
     <div className="transactions transactions-income">
       <h2>Transaction History</h2>
-      <ul className="transaction-list">
+      <ul className="transaction-list income">
         <li className="transaction">
-          <span className="transaction-text">Salary</span>
-          <span className="transaction-amount">$5000</span>
-          <Button className="delete-btn">
+          <span className="transaction-text">Salary:</span>
+          <span style={{ marginLeft: "10px" }} className="transaction-amount">
+            $5000
+          </span>
+          <button className="delete-btn">
             <i className="fas fa-trash"></i>
-          </Button>
+          </button>
         </li>
       </ul>
     </div>
