@@ -10,7 +10,19 @@ body {
 }
 
 h2 {
-  color: grey;
+  color: slategray;
+}
+
+.navbar {
+  background-color: snow;
+}
+
+.navbar-brand:hover {
+  color: rgb(38, 42, 46) !important;
+}
+
+.navlink:hover {
+  color: rgb(38, 42, 46) !important;
 }
 
 .balance {
@@ -101,25 +113,29 @@ h2 {
 }
 
 .plus {
-  color: green;
+  color: rgb(51, 153, 97);
 }
 
 .minus {
-  color: red;
+  color: rgb(228, 87, 62);
 }
 
 .transaction.income {
+  position: relative;
   background-color: mediumseagreen;
   border-radius: 5px;
+  width: 250%;
   padding: 5px 10px;
   margin-bottom: 1rem;
   list-style-type: none;
 }
 
 .transaction.expense {
+  position: relative;
   background-color: tomato;
   border-radius: 5px;
   padding: 5px 10px;
+  width: 250%;
   margin-bottom: 1rem;
   list-style-type: none;
 }
@@ -137,13 +153,13 @@ h2 {
   flex-direction: column;
   position: absolute;
   bottom: 30%;
-  left: 67%;
+  left: 66.5%;
 }
 
 .transaction-list.income {
   position: absolute;
   top: 50px;
-  left: 60px;
+  left: 25px;
   padding: 5px 10px;
   color: white;
 }
@@ -151,7 +167,12 @@ h2 {
 .transaction-list.expense {
   position: absolute;
   top: 50px;
-  left: 60px;
+  left: 25px;
   padding: 5px 10px;
   color: white;
+}
+
+.transaction-amount {
+  position: absolute;
+  right: 10px;
 }

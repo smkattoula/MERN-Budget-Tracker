@@ -12,7 +12,7 @@ const ExpenseList = () => {
             <span className="transaction-text">
               {expenseTransaction.expenseText}:
             </span>
-            <span style={{ marginLeft: "10px" }} className="transaction-amount">
+            <span className="transaction-amount">
               ${expenseTransaction.expenseAmount}
             </span>
             <button className="delete-btn">

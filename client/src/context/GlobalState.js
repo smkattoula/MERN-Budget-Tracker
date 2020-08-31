@@ -8,8 +8,8 @@ const initialState = {
     { id: 3, incomeText: "Bonus", incomeAmount: 13000 },
   ],
   expenseTransactions: [
-    { id: 4, expenseText: "Rent", expenseAmount: 1000 },
-    { id: 5, expenseText: "Bank", expenseAmount: 2000 },
+    { id: 4, expenseText: "Car Sold", expenseAmount: 1000 },
+    { id: 5, expenseText: "Salary", expenseAmount: 2000 },
     { id: 6, expenseText: "Clothes", expenseAmount: 500 },
   ],
 };

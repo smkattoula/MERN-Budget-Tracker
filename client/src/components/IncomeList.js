@@ -14,7 +14,7 @@ const IncomeList = () => {
             <span className="transaction-text">
               {incomeTransaction.incomeText}:
             </span>
-            <span style={{ marginLeft: "10px" }} className="transaction-amount">
+            <span className="transaction-amount">
               ${incomeTransaction.incomeAmount}
             </span>
             <button className="delete-btn">
