@@ -32,6 +32,14 @@ export const GlobalContextProvider = ({ children }) => {
       payload: expenseTransaction,
     });
   };
+
+  const deleteTransaction = (id) => {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: id,
+    });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -39,6 +47,7 @@ export const GlobalContextProvider = ({ children }) => {
         expenseTransactions: state.expenseTransactions,
         addIncome,
         addExpense,
+        deleteTransaction,
       }}
     >
       {children}
