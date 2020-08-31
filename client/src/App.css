@@ -14,15 +14,15 @@ h2 {
 }
 
 .navbar {
-  background-color: snow;
+  background-color: rgb(252, 236, 224);
 }
 
 .navbar-brand:hover {
-  color: rgb(38, 42, 46) !important;
+  color: rgb(90, 98, 107) !important;
 }
 
 .navlink:hover {
-  color: rgb(38, 42, 46) !important;
+  color: rgb(90, 98, 107) !important;
 }
 
 .balance {
