@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import IncomeTransaction from "./IncomeTransaction";
 
 const Balance = () => {
   const { incomeTransactions, expenseTransactions } = useContext(GlobalContext);
@@ -21,18 +20,22 @@ const Balance = () => {
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
+  const numberWithCommas = (e) => {
+    return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   return (
     <div className="balance">
       <h2>Your Balance</h2>
-      <h3>${totalIncome - totalExpense}</h3>
+      <h3>${numberWithCommas(totalIncome - totalExpense)}</h3>
       <div className="income-expense">
         <div className="plus">
           <h3>Income</h3>
-          <p>+${totalIncome}</p>
+          <p>+${numberWithCommas(totalIncome)}</p>
         </div>
         <div className="minus">
           <h3>Expenses</h3>
-          <p>-${totalExpense}</p>
+          <p>-${numberWithCommas(totalExpense)}</p>
         </div>
       </div>
     </div>

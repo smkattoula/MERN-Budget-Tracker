@@ -3,13 +3,18 @@ import { GlobalContext } from "../context/GlobalState";
 
 const ExpenseTransaction = ({ expenseTransaction }) => {
   const { deleteTransaction } = useContext(GlobalContext);
+
+  const numberWithCommas = (e) => {
+    return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   return (
     <li className="transaction expense">
       <span className="transaction-text">
         {expenseTransaction.expenseText}:
       </span>
       <span className="transaction-amount">
-        ${expenseTransaction.expenseAmount}
+        ${numberWithCommas(expenseTransaction.expenseAmount)}
       </span>
       <button
         className="delete-btn"
