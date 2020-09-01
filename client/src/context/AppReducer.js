@@ -3,8 +3,12 @@ export default (state, action) => {
     case "GET_TRANSACTIONS":
       return {
         ...state,
-        incomeTransactions: action.payload,
-        expenseTransactions: action.payload,
+        incomeTransactions: action.payload.filter(
+          (incomeTransaction) => incomeTransaction.incomeText
+        ),
+        expenseTransactions: action.payload.filter(
+          (expenseTransaction) => expenseTransaction.expenseText
+        ),
       };
     case "ADD_INCOME":
       return {

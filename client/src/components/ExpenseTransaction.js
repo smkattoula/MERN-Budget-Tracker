@@ -14,7 +14,7 @@ const ExpenseTransaction = ({ expenseTransaction }) => {
         {expenseTransaction.expenseText}:
       </span>
       <span className="transaction-amount">
-        ${expenseTransaction.expenseAmount}
+        ${numberWithCommas(expenseTransaction.expenseAmount)}
       </span>
       <button
         className="delete-btn"

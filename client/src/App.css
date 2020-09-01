@@ -135,6 +135,7 @@ h2 {
   background-color: tomato;
   border-radius: 5px;
   padding: 5px 10px;
+  margin-right: 20px;
   width: 250%;
   margin-bottom: 1rem;
   list-style-type: none;
@@ -159,7 +160,7 @@ h2 {
 .transaction-list.income {
   position: absolute;
   top: 50px;
-  left: 25px;
+  left: -25px;
   padding: 5px 10px;
   color: white;
 }
@@ -167,7 +168,7 @@ h2 {
 .transaction-list.expense {
   position: absolute;
   top: 50px;
-  left: 25px;
+  left: -25px;
   padding: 5px 10px;
   color: white;
 }
