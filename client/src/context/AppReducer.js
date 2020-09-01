@@ -1,5 +1,11 @@
 export default (state, action) => {
   switch (action.type) {
+    case "GET_TRANSACTIONS":
+      return {
+        ...state,
+        incomeTransactions: action.payload,
+        expenseTransactions: action.payload,
+      };
     case "ADD_INCOME":
       return {
         ...state,
@@ -14,10 +20,10 @@ export default (state, action) => {
       return {
         ...state,
         incomeTransactions: state.incomeTransactions.filter(
-          (incomeTransaction) => incomeTransaction.id !== action.payload
+          (incomeTransaction) => incomeTransaction._id !== action.payload
         ),
         expenseTransactions: state.expenseTransactions.filter(
-          (expenseTransaction) => expenseTransaction.id !== action.payload
+          (expenseTransaction) => expenseTransaction._id !== action.payload
         ),
       };
     default:

@@ -12,7 +12,7 @@ const ExpenseList = () => {
       <ul className="transaction-list expense">
         {expenseTransactions.map((expenseTransaction) => (
           <ExpenseTransaction
-            key={expenseTransaction.id}
+            key={expenseTransaction._id}
             expenseTransaction={expenseTransaction}
           />
         ))}

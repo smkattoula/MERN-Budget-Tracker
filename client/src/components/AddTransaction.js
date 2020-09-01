@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Form, FormGroup, Label, Input } from "reactstrap";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
 
 const AddTransaction = () => {
@@ -24,12 +24,15 @@ const AddTransaction = () => {
 
     if (incomeText !== "") {
       const newIncomeTransaction = {
-        id: uuidv4(),
         incomeText,
         incomeAmount: +incomeAmount,
       };
 
       addIncome(newIncomeTransaction);
+
+      axios
+        .post("/api/transactions", newIncomeTransaction)
+        .then((res) => console.log(res.data));
 
       setIncome({
         incomeText: "",
@@ -56,12 +59,15 @@ const AddTransaction = () => {
 
     if (expenseText !== "") {
       const newExpenseTransaction = {
-        id: uuidv4(),
         expenseText,
         expenseAmount: +expenseAmount,
       };
 
       addExpense(newExpenseTransaction);
+
+      axios
+        .post("/api/transactions", newExpenseTransaction)
+        .then((res) => console.log(res.data));
 
       setExpense({
         expenseText: "",

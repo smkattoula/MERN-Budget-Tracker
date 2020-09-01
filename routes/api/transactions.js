@@ -20,8 +20,10 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const newTransaction = new Transaction({
-    name: req.body.name,
-    amount: req.body.amount,
+    incomeText: req.body.incomeText,
+    incomeAmount: req.body.incomeAmount,
+    expenseText: req.body.expenseText,
+    expenseAmount: req.body.expenseAmount,
   });
 
   newTransaction

@@ -3,14 +3,19 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const TransactionSchema = new Schema({
-  name: {
+  incomeText: {
     type: String,
     trim: true,
-    required: true,
   },
-  amount: {
+  expenseText: {
+    type: String,
+    trim: true,
+  },
+  incomeAmount: {
     type: Number,
-    required: true,
+  },
+  expenseAmount: {
+    type: Number,
   },
   createdAt: {
     type: Date,

@@ -1,23 +1,23 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 import AppReducer from "./AppReducer";
+import axios from "axios";
 
 const initialState = {
-  incomeTransactions: [
-    { id: 1, incomeText: "Car Sold", incomeAmount: 15000 },
-    { id: 2, incomeText: "Salary", incomeAmount: 5000 },
-    { id: 3, incomeText: "Bonus", incomeAmount: 13000 },
-  ],
-  expenseTransactions: [
-    { id: 4, expenseText: "Rent", expenseAmount: 1000 },
-    { id: 5, expenseText: "Bank", expenseAmount: 2000 },
-    { id: 6, expenseText: "Clothes", expenseAmount: 500 },
-  ],
+  incomeTransactions: [],
+  expenseTransactions: [],
 };
 
 export const GlobalContext = createContext(initialState);
 
 export const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  useEffect(() => {
+    axios
+      .get("/api/transactions")
+      .then((res) => dispatch({ type: "GET_TRANSACTIONS", payload: res.data }))
+      .catch((err) => console.log(err));
+  }, []);
 
   const addIncome = (incomeTransaction) => {
     dispatch({
@@ -33,10 +33,10 @@ export const GlobalContextProvider = ({ children }) => {
     });
   };
 
-  const deleteTransaction = (id) => {
+  const deleteTransaction = (_id) => {
     dispatch({
       type: "DELETE_TRANSACTION",
-      payload: id,
+      payload: _id,
     });
   };
 
