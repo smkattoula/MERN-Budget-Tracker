@@ -10,7 +10,7 @@ const Transaction = require("../../models/Transaction");
 
 router.get("/", (req, res) => {
   Transaction.find()
-    .sort({ date: -1 })
+    .sort({ createdAt: -1 })
     .then((transactions) => res.json(transactions));
 });
 
