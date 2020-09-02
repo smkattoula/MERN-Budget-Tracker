@@ -42,11 +42,12 @@ const AddTransaction = () => {
   };
 
   const [expense, setExpense] = useState({
+    id: Math.floor(Math.random() * 100000000),
     expenseText: "",
     expenseAmount: 0,
   });
 
-  const { expenseText, expenseAmount } = expense;
+  const { expenseText, expenseAmount, id } = expense;
 
   const onChangeExpense = (e) => {
     setExpense({ ...expense, [e.target.name]: e.target.value });
@@ -59,6 +60,7 @@ const AddTransaction = () => {
 
     if (expenseText !== "") {
       const newExpenseTransaction = {
+        id,
         expenseText,
         expenseAmount: +expenseAmount,
       };

@@ -13,11 +13,15 @@ export const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   useEffect(() => {
+    getTransactions();
+  }, []);
+
+  const getTransactions = () => {
     axios
       .get("/api/transactions")
       .then((res) => dispatch({ type: "GET_TRANSACTIONS", payload: res.data }))
       .catch((err) => console.log(err));
-  }, []);
+  };
 
   const addIncome = (incomeTransaction) => {
     dispatch({
@@ -33,12 +37,27 @@ export const GlobalContextProvider = ({ children }) => {
     });
   };
 
-  const deleteTransaction = (_id) => {
-    dispatch({
-      type: "DELETE_TRANSACTION",
-      payload: _id,
-    });
+  const deleteTransaction = (id) => {
+    axios
+      .delete(`/api/transactions/${id}`)
+      .then((res) => console.log(res.data))
+      .then(() =>
+        dispatch({
+          type: "DELETE_TRANSACTION",
+          payload: id,
+        })
+      )
+      .catch((err) => console.log(err));
   };
+
+  // localStorage.setItem(
+  //   "incomeTransactions",
+  //   JSON.stringify(state.incomeTransactions)
+  // );
+  // localStorage.setItem(
+  //   "expenseTransactions",
+  //   JSON.stringify(state.expenseTransactions)
+  // );
 
   return (
     <GlobalContext.Provider
@@ -48,6 +67,7 @@ export const GlobalContextProvider = ({ children }) => {
         addIncome,
         addExpense,
         deleteTransaction,
+        getTransactions,
       }}
     >
       {children}

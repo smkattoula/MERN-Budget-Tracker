@@ -14,6 +14,16 @@ router.get("/", (req, res) => {
     .then((transactions) => res.json(transactions));
 });
 
+// Route: GET api/transactions
+// Description: Get a single transaction
+// Access: Public
+
+router.get("/:id", (req, res) => {
+  Transaction.findById(req.params.id)
+    .then((transaction) => res.json(transaction))
+    .catch((err) => res.status(400).json("Error: " + err));
+});
+
 // Route: POST api/transactions
 // Description: Create a transaction
 // Access: Public
