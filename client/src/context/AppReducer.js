@@ -13,12 +13,12 @@ export default (state, action) => {
     case "ADD_INCOME":
       return {
         ...state,
-        incomeTransactions: [action.payload, ...state.incomeTransactions],
+        incomeTransactions: [...state.incomeTransactions, action.payload],
       };
     case "ADD_EXPENSE":
       return {
         ...state,
-        expenseTransactions: [action.payload, ...state.expenseTransactions],
+        expenseTransactions: [...state.expenseTransactions, action.payload],
       };
     case "DELETE_TRANSACTION":
       return {

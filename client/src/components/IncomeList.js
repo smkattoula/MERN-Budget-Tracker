@@ -13,7 +13,7 @@ const IncomeList = () => {
       <ul className="transaction-list income">
         {incomeTransactions.map((incomeTransaction) => (
           <IncomeTransaction
-            key={incomeTransaction.id}
+            key={incomeTransaction._id}
             incomeTransaction={incomeTransaction}
           />
         ))}
