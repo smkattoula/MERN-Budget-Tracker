@@ -24,10 +24,10 @@ export default (state, action) => {
       return {
         ...state,
         incomeTransactions: state.incomeTransactions.filter(
-          (incomeTransaction) => incomeTransaction._id !== action.payload
+          (incomeTransaction) => incomeTransaction.id !== action.payload
         ),
         expenseTransactions: state.expenseTransactions.filter(
-          (expenseTransaction) => expenseTransaction._id !== action.payload
+          (expenseTransaction) => expenseTransaction.id !== action.payload
         ),
       };
     default:
