@@ -13,21 +13,21 @@ export default (state, action) => {
     case "ADD_INCOME":
       return {
         ...state,
-        incomeTransactions: [...state.incomeTransactions, action.payload],
+        incomeTransactions: [action.payload, ...state.incomeTransactions],
       };
     case "ADD_EXPENSE":
       return {
         ...state,
-        expenseTransactions: [...state.expenseTransactions, action.payload],
+        expenseTransactions: [action.payload, ...state.expenseTransactions],
       };
     case "DELETE_TRANSACTION":
       return {
         ...state,
         incomeTransactions: state.incomeTransactions.filter(
-          (incomeTransaction) => incomeTransaction.id !== action.payload
+          (incomeTransaction) => incomeTransaction._id !== action.payload
         ),
         expenseTransactions: state.expenseTransactions.filter(
-          (expenseTransaction) => expenseTransaction.id !== action.payload
+          (expenseTransaction) => expenseTransaction._id !== action.payload
         ),
       };
     default:

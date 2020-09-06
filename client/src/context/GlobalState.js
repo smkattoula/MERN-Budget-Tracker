@@ -37,14 +37,14 @@ export const GlobalContextProvider = ({ children }) => {
     });
   };
 
-  const deleteTransaction = (_id) => {
+  const deleteTransaction = (id) => {
     axios
-      .delete(`/api/transactions/${_id}`)
+      .delete(`/api/transactions/${id}`)
       .then((res) => console.log(res.data))
       .then(() =>
         dispatch({
           type: "DELETE_TRANSACTION",
-          payload: _id,
+          payload: id,
         })
       )
       .catch((err) => console.log(err));

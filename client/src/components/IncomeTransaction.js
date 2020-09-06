@@ -1,12 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
 const IncomeTransaction = ({ incomeTransaction }) => {
-  const { deleteTransaction } = useContext(GlobalContext);
+  const { deleteTransaction, getTransactions } = useContext(GlobalContext);
 
   const numberWithCommas = (e) => {
     return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
+
+  useEffect(() => {
+    getTransactions();
+  }, []);
 
   return (
     <li className="transaction income">
