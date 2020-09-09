@@ -4,7 +4,7 @@ import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
 
 const AddTransaction = () => {
-  const { addIncome, addExpense } = useContext(GlobalContext);
+  const { addIncome, addExpense, getTransactions } = useContext(GlobalContext);
 
   const [income, setIncome] = useState({
     incomeText: "",
@@ -30,14 +30,20 @@ const AddTransaction = () => {
 
       addIncome(newIncomeTransaction);
 
+      const token = localStorage.getItem("auth-token");
+
       axios
-        .post("/api/transactions", newIncomeTransaction)
+        .post("/api/transactions", newIncomeTransaction, {
+          headers: { "x-auth-token": token },
+        })
         .then((res) => console.log(res.data));
 
       setIncome({
         incomeText: "",
         incomeAmount: 0,
       });
+
+      getTransactions();
     }
   };
 
@@ -65,14 +71,19 @@ const AddTransaction = () => {
 
       addExpense(newExpenseTransaction);
 
+      const token = localStorage.getItem("auth-token");
+
       axios
-        .post("/api/transactions", newExpenseTransaction)
+        .post("/api/transactions", newExpenseTransaction, {
+          headers: { "x-auth-token": token },
+        })
         .then((res) => console.log(res.data));
 
       setExpense({
         expenseText: "",
         expenseAmount: 0,
       });
+      getTransactions();
     }
   };
 

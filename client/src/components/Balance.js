@@ -20,6 +20,8 @@ const Balance = () => {
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
+  const balance = totalIncome - totalExpense;
+
   const numberWithCommas = (e) => {
     return e.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -27,7 +29,7 @@ const Balance = () => {
   return (
     <div className="balance">
       <h2>Your Balance</h2>
-      <h3>${numberWithCommas(totalIncome - totalExpense)}</h3>
+      <h3>${numberWithCommas(balance)}</h3>
       <div className="income-expense">
         <div className="plus">
           <h3>Income</h3>

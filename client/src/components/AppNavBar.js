@@ -7,8 +7,6 @@ import {
   NavbarToggler,
   NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
   Container,
 } from "reactstrap";
 
@@ -30,7 +28,7 @@ class AppNavBar extends Component {
           <Container>
             <NavbarBrand
               className="navbar-brand"
-              style={{ color: "slategray" }}
+              style={{ color: "white" }}
               href="/"
             >
               Budget Tracker

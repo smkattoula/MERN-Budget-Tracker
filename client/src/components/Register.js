@@ -40,7 +40,7 @@ export default function Register() {
     <Form>
       <h3>Register</h3>
       <br />
-      <FormGroup>
+      <FormGroup className="login-register">
         <Label for="registerName">Name</Label>
         <Input
           type="text"
@@ -50,7 +50,7 @@ export default function Register() {
           placeholder="Enter name.."
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className="login-register">
         <Label for="registerEmail">Email</Label>
         <Input
           type="email"
@@ -60,7 +60,7 @@ export default function Register() {
           placeholder="Enter email.."
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className="login-register">
         <Label for="registerPassword">Password</Label>
         <Input
           type="password"
@@ -70,7 +70,7 @@ export default function Register() {
           placeholder="Enter password.."
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className="login-register">
         <Label>Verify Password</Label>
         <Input
           type="password"

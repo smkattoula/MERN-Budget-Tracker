@@ -17,8 +17,9 @@ export const GlobalContextProvider = ({ children }) => {
   }, []);
 
   const getTransactions = () => {
+    const token = localStorage.getItem("auth-token");
     axios
-      .get("/api/transactions")
+      .get("/api/transactions", { headers: { "x-auth-token": token } })
       .then((res) => dispatch({ type: "GET_TRANSACTIONS", payload: res.data }))
       .catch((err) => console.log(err));
   };
@@ -38,8 +39,9 @@ export const GlobalContextProvider = ({ children }) => {
   };
 
   const deleteTransaction = (id) => {
+    const token = localStorage.getItem("auth-token");
     axios
-      .delete(`/api/transactions/${id}`)
+      .delete(`/api/transactions/${id}`, { headers: { "x-auth-token": token } })
       .then((res) => console.log(res.data))
       .then(() =>
         dispatch({
@@ -49,15 +51,6 @@ export const GlobalContextProvider = ({ children }) => {
       )
       .catch((err) => console.log(err));
   };
-
-  // localStorage.setItem(
-  //   "incomeTransactions",
-  //   JSON.stringify(state.incomeTransactions)
-  // );
-  // localStorage.setItem(
-  //   "expenseTransactions",
-  //   JSON.stringify(state.expenseTransactions)
-  // );
 
   return (
     <GlobalContext.Provider

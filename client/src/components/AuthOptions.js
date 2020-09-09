@@ -23,16 +23,22 @@ export default function AuthOptions() {
       {userData.user ? (
         <>
           <NavItem className="auth-options">
-            <NavLink onClick={logout}>Logout</NavLink>
+            <NavLink className="auth-options navlink" onClick={logout}>
+              Logout
+            </NavLink>
           </NavItem>
         </>
       ) : (
         <>
           <NavItem className="auth-options">
-            <NavLink onClick={login}>Login</NavLink>
+            <NavLink className="auth-options navlink" onClick={login}>
+              Login
+            </NavLink>
           </NavItem>
           <NavItem className="auth-options">
-            <NavLink onClick={register}>Register</NavLink>
+            <NavLink className="auth-options navlink" onClick={register}>
+              Register
+            </NavLink>
           </NavItem>
         </>
       )}

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext";
+import { GlobalContext } from "../context/GlobalState";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import axios from "axios";
 
@@ -8,6 +9,7 @@ export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  const { getTransactions } = useContext(GlobalContext);
   const { setUserData } = useContext(UserContext);
   const history = useHistory();
 
@@ -24,6 +26,7 @@ export default function Login() {
       });
       localStorage.setItem("auth-token", loginRes.data.token);
       history.push("/budget");
+      getTransactions();
     } catch (err) {
       throw err;
     }
@@ -33,7 +36,7 @@ export default function Login() {
     <Form>
       <h3>Login</h3>
       <br />
-      <FormGroup>
+      <FormGroup className="login-register">
         <Label for="loginEmail">Email</Label>
         <Input
           type="email"
@@ -43,7 +46,7 @@ export default function Login() {
           placeholder="Enter email.."
         />
       </FormGroup>
-      <FormGroup>
+      <FormGroup className="login-register">
         <Label for="loginPassword">Password</Label>
         <Input
           type="password"
