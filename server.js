@@ -4,6 +4,7 @@ const config = require("config");
 const cors = require("cors");
 
 const transactions = require("./routes/api/transactions");
+const users = require("./routes/api/users");
 
 const app = express();
 
@@ -28,6 +29,7 @@ mongoose
 
 // Use Routes
 app.use("/api/transactions", transactions);
+app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
 

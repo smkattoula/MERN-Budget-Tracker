@@ -17,6 +17,10 @@ const TransactionSchema = new Schema({
   expenseAmount: {
     type: Number,
   },
+  userId: {
+    type: String,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

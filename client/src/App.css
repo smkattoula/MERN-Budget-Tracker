@@ -158,6 +158,7 @@ h2 {
 
 .transaction-list.income {
   position: absolute;
+  overflow-wrap: break-word;
   top: 50px;
   left: -30px;
   padding: 5px 20px;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import AuthOptions from "./AuthOptions";
 
 import {
   Collapse,
@@ -37,16 +38,7 @@ class AppNavBar extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink
-                    className="navlink"
-                    style={{ color: "slategray" }}
-                    target="_blank"
-                    href="https://github.com/smkattoula"
-                  >
-                    Github
-                  </NavLink>
-                </NavItem>
+                <AuthOptions />
               </Nav>
             </Collapse>
           </Container>

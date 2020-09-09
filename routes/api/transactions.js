@@ -1,24 +1,25 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../../middleware/auth");
 
 // Transaction Model
 const Transaction = require("../../models/Transaction");
 
 // Route: GET api/transactions
 // Description: Get all transactions
-// Access: Public
+// Access: Private
 
-router.get("/", (req, res) => {
-  Transaction.find()
+router.get("/", auth, (req, res) => {
+  Transaction.find({ userId: req.user.id })
     .sort({ createdAt: -1 })
     .then((transactions) => res.json(transactions));
 });
 
 // Route: GET api/transactions
 // Description: Get a single transaction
-// Access: Public
+// Access: Private
 
-router.get("/:id", (req, res) => {
+router.get("/:id", auth, (req, res) => {
   Transaction.findById(req.params.id)
     .then((transaction) => res.json(transaction))
     .catch((err) => res.status(400).json("Error: " + err));
@@ -26,14 +27,15 @@ router.get("/:id", (req, res) => {
 
 // Route: POST api/transactions
 // Description: Create a transaction
-// Access: Public
+// Access: Private
 
-router.post("/", (req, res) => {
+router.post("/", auth, (req, res) => {
   const newTransaction = new Transaction({
     incomeText: req.body.incomeText,
     incomeAmount: req.body.incomeAmount,
     expenseText: req.body.expenseText,
     expenseAmount: req.body.expenseAmount,
+    userId: req.user.id,
   });
 
   newTransaction
@@ -44,10 +46,10 @@ router.post("/", (req, res) => {
 
 // Route: DELETE api/transactions/:id
 // Description: Delete an existing transaction
-// Access: Public
+// Access: Private
 
-router.delete("/:id", (req, res) => {
-  Transaction.findById(req.params.id)
+router.delete("/:id", auth, (req, res) => {
+  Transaction.findById({ userId: req.user.id, _id: req.params.id })
     .then((transaction) =>
       transaction.remove().then(() => res.json({ success: true }))
     )
