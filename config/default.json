@@ -1,0 +1,4 @@
+{
+  "MONGO_URI": "mongodb+srv://smkattoula:SHka9092@budgettracker.1frph.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "JWT_SECRET": "EjvPJFSNUKe=Fr5d#WpQ4HCXMcD6V4Qa+%v=?GU?MKPpn%-jN?"
+}
