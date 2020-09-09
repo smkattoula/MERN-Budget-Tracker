@@ -3,12 +3,14 @@ import { useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import axios from "axios";
+import ErrorNotice from "./ErrorNotice";
 
 export default function Register() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [passwordCheck, setPasswordCheck] = useState();
+  const [error, setError] = useState();
 
   const { setUserData } = useContext(UserContext);
   const history = useHistory();
@@ -32,13 +34,14 @@ export default function Register() {
       localStorage.setItem("auth-token", loginRes.data.token);
       history.push("/budget");
     } catch (err) {
-      throw err;
+      err.response.data.msg && setError(err.response.data.msg);
     }
   };
 
   return (
     <Form>
       <h3>Register</h3>
+      {error && <ErrorNotice message={error} />}
       <br />
       <FormGroup className="login-register">
         <Label for="registerName">Name</Label>

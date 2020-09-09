@@ -4,10 +4,12 @@ import UserContext from "../context/UserContext";
 import { GlobalContext } from "../context/GlobalState";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import axios from "axios";
+import ErrorNotice from "./ErrorNotice";
 
 export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [error, setError] = useState();
 
   const { getTransactions } = useContext(GlobalContext);
   const { setUserData } = useContext(UserContext);
@@ -28,13 +30,14 @@ export default function Login() {
       history.push("/budget");
       getTransactions();
     } catch (err) {
-      throw err;
+      err.response.data.msg && setError(err.response.data.msg);
     }
   };
 
   return (
     <Form>
       <h3>Login</h3>
+      {error && <ErrorNotice message={error} />}
       <br />
       <FormGroup className="login-register">
         <Label for="loginEmail">Email</Label>

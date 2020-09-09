@@ -18,7 +18,7 @@ export default function Home() {
         <>
           <h1>Welcome to Budget Tracker!</h1>
           <br />
-          <h3>Please register a new user or login to create tickets.</h3>
+          <h3>Please register a new user or login to create a budget.</h3>
         </>
       )}
     </div>
