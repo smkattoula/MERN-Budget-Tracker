@@ -1,0 +1,32 @@
+# MERN-Budget-Tracker
+Created a full-stack application using the MERN framework that allows the user to track their income and expenses. Implements RESTful API's(JSON), CRUD functionality, State Management (Context API), User Authentication(JWT + bcryptJS), MongoDB(database), React-Router-Dom, Bootstrap/Reactstrap, Axios, Mongoose and more.
+
+![Image](https://github.com/smkattoula/smkattoula.github.io/blob/master/assets/img/portfolio/BudgetTrackerPic.png)
+
+## Installation 
+I created a "client-install" script to make it easier for you to install all of the dependancies so that you don't have to run "npm install" twice for both the server package.json and client package.json. Instead, all you need to do after you have cloned this repo into your text editor is to `cd into the root folder` and run `npm client-install`. This will install all of the dependacies for both server side and client side package.json. You can then run `npm run dev` to start up the nodemon server (for real-time error handling) and the development server (to view the app in localhost on your browser).
+
+## User Stories
+* As a user, I WANT to be able to register my own account with a name, email and password so that I can have access to my own personal budget tracker.
+* As a user, I WANT to be able to log into my own account with my email and password.
+* As a user, I WANT to be able to log out of my own account.
+* As a user, I WANT to be able to create both income and expense transactions wherein each transaction item includes a name and amount, so that I can keep track of my budget.
+* As a user, I WANT to be able to see a list of all of my income and expense transactions
+* As a user, I WANT to be able to delete a single income or expense transaction.
+* As a user, I WANT to be able to see a "balance" total that gets updated every time I submit an income or expense transaction.
+* As a user, I WANT to be able to see individual amount totals for the income transaction and the expense transaction.
+
+## System Requirement Specification (SRS)
+### Overview
+I am a full-stack web developer specializing in the MERN framework and currently seeking opportunities for full-time employment. My goal is to create high-quality web and mobile applications that help to solve real world business problems and engineer creative solutions to excell your company in the marketplace. 
+
+## Blockers and Challenges
+1. One of the most challenging aspects of this project was properly connecting the frontend to the backend via axios http requests. For example, since the Schema in my Model contained both income and expense transaction items, the "GET_TRANSACTIONS" case in my AppReducer file was returning the payload for both the income and expense transaction items in both the income and expense transaction lists of the UI(does that make sense?). At first I wasn't sure how to deal with this issue so I had two ideas. The first idea was to create two seperate models called IncomeTransaction and ExpenseTransaction to house their individual schema's and then call their individual payloads from the AppReducer. However, I decided to go with my second idea which was quicker, and that was to add a filter inside of the "GET_TRANSACTIONS" case for both the income transaction and the expense transaction. This would still call the payload twice, but filtering out the expenses in the income transaction list and vice versa for the expense transaction list. 
+2. Another blocker involving axios http requests was the delete functionality. The issue was that upon posting a transaction to one of the lists, clicking delete on the newly posted transaction would return a 404 error, as the console revealed a DELETE request with an undefined endpoint. It was only upon refreshing the page that the DELETE request would work. I eventually solved the issue by calling the "getTransactions" function (which GETs the data for the income and expense transaction lists from GlobalState) with the "useEffect" hook in the IncomeTransaction and ExpenseTransaction components. For some reason unbeknownst to me at my current level of understanding, initially posting an income or expense transaction would only return the "_id" of that transaction after refreshing the page. This was probably the biggest blocker I had on this project and I was actually stuck on it for about 3-4 days trying to resolve the issue, which I eventually did after a lot of trial and error, as well as just sheer determination to figure out at least some working solution. Although the solution took way longer than it needed to be for me to figure it out, I did learn a lot about myself, how I approach problems and go about finding solutions. This is the kind of stuff that drives my passion to code! I love encountering new challenges with code, I even welcome and embrace them because in my mind, they represent an opportunity to learn and to grow, to think outside of the box, to improve the brain's ability for critical thinking and to handle more complex information. I'm so excited to learn more and reach new heights in web development!
+3. One more notable challenge for me was styling the UI with CSS. I am especially eager to get good at CSS because of the very fact that it is actually hard to master! I took one full day during my sprint just to work on CSS, trying out different styles and aligning all of the content properly using Flex Box. Highly underrated programming language in my opinion. 
+
+## Ways to Improve and Future Updates
+1. Refactoring code. 
+2. I know for a fact that there are way better and more efficient solutions to all of the blockers I've faced. Once I gain more experience, I will return to this project and make improvements. 
+3. I didn't really feel the need to add the UPDATE functionality to this particular project because it's really easy to just delete a transaction and create a new one. However, just for the sake of implementing full CRUD features, I will return to this project in the near future to implement the UPDATE functionality which will allow a user to edit an existing transaction. 
+4. Improving the UI with CSS styling. I'm happy with the simple design I was able to create from scratch with CSS, however, I'd like to improve upon this and make it look even better! 
