@@ -40,8 +40,8 @@ I am a full-stack web developer specializing in the MERN framework and currently
 3) One more notable challenge for me was styling the UI with CSS. I am especially eager to get good at CSS because of the very fact that it is actually hard to master! I took one full day during my sprint just to work on CSS, trying out different styles and aligning all of the content properly using Flex Box. Highly underrated programming language in my opinion. 
 
 ## Ways to Improve and Future Updates
-1) Refactoring code. 
-2) I know for a fact that there are way better and more efficient solutions to all of the blockers I've faced. Once I gain more experience, I will return to this project and make improvements. 
-3) I didn't really feel the need to add the UPDATE functionality to this particular project because it's really easy to just delete a transaction and create a new one. However, just for the sake of implementing full CRUD features, I will return to this project in the near future to implement the UPDATE functionality which will allow a user to edit an existing transaction. 
-4) Improving the UI with CSS styling. I'm happy with the simple design I was able to create from scratch with CSS, however, I'd like to improve upon this and make it look even better! 
-5) Responsive design. Still need to implement media queries to allow for responsiveness on all devices.
+1) Refactoring code. There's always room for that.
+2) I still need to implement media queries to allow for responsiveness on all devices.
+3) I know for a fact that there are way better and more efficient solutions to all of the blockers I've faced. Once I gain more experience, I will return to this project and make improvements. 
+4) I didn't really feel the need to add the UPDATE functionality to this particular project because it's really easy to just delete a transaction and create a new one. However, just for the sake of implementing full CRUD features, I will return to this project in the near future to implement the UPDATE functionality which will allow a user to edit an existing transaction. 
+5) Improving the UI with CSS styling. I'm happy with the simple design I was able to create from scratch with CSS, however, I'd like to improve upon this and make it look even better! 
