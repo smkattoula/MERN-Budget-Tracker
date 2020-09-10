@@ -20,7 +20,7 @@ I am a full-stack web developer specializing in the MERN framework and currently
 ### Phases
 * Phase 1: Backend - MongoDB with express API and mongoose, Models, API routes, CRUD functionality.
 * Phase 2: Frontend - React, UI design with CSS and Bootstrap/Reactstrap, connecting frontend to backend via axios.
-* Phase 3: User Authentication - Json Web Token(JWT), bcryptJS, form validations, error handling, auth middleware.
+* Phase 3: User Authentication - JSON Web Token(JWT), bcryptJS, form validations, error handling, auth middleware.
 * Phase 4: Review - Debugging, refactoring, improvements, and documentation.
 * Phase 5: Deployment - Prepare build and deploy to Heroku.
 
