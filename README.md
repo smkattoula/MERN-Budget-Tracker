@@ -44,3 +44,4 @@ I am a full-stack web developer specializing in the MERN framework and currently
 2) I know for a fact that there are way better and more efficient solutions to all of the blockers I've faced. Once I gain more experience, I will return to this project and make improvements. 
 3) I didn't really feel the need to add the UPDATE functionality to this particular project because it's really easy to just delete a transaction and create a new one. However, just for the sake of implementing full CRUD features, I will return to this project in the near future to implement the UPDATE functionality which will allow a user to edit an existing transaction. 
 4) Improving the UI with CSS styling. I'm happy with the simple design I was able to create from scratch with CSS, however, I'd like to improve upon this and make it look even better! 
+5) Responsive design. Still need to implement media queries to allow for responsiveness on all devices.
