@@ -1,12 +1,30 @@
 # MERN-Budget-Tracker
-Created a full-stack application using the MERN framework that allows the user to track their income and expenses. Implements RESTful API's(JSON), CRUD functionality, State Management (Context API), User Authentication(JWT + bcryptJS), MongoDB(database), React-Router-Dom, Bootstrap/Reactstrap, Axios, Mongoose and more.
+A full-stack application utilizing the MERN framework. This application allows the user to track their income and expenses. Implements REST API's with axios, CRUD functionality, MVC design pattern, JSON, User Authentication using JWT and bcryptJS, MongoDB with mongoose, State Management using Context API, Styling of the UI with CSS, use of React libraries such as BrowserRouter, React-Router-Dom, Hooks, Bootstrap/Reactstrap and more. 
 
 ![Image](https://github.com/smkattoula/smkattoula.github.io/blob/master/assets/img/portfolio/BudgetTrackerPic.png)
 
 ## Installation 
 I created a "client-install" script to make it easier for you to install all of the dependancies so that you don't have to run "npm install" twice for both the server package.json and client package.json. Instead, all you need to do after you have cloned this repo into your text editor is to `cd into the root folder` and run `npm client-install`. This will install all of the dependacies for both server side and client side package.json. You can then run `npm run dev` to start up the nodemon server (for real-time error handling) and the development server (to view the app in localhost on your browser).
 
-## User Stories
+## System Requirement Specification (SRS)
+### Overview
+I am a full-stack web developer specializing in the MERN framework and currently seeking opportunities for full-time employment. My goal is to create high-quality web and mobile applications that help to solve real world business problems and engineer creative solutions to excell your company in the marketplace. The scope of this project is fairly small and simple, but provides a functional software that allows anyone to track their income and expenses for both personal and business reasons. The completion of this full-stack application demonstrates my understanding of the core fundamentals of web development. Budget Tracker implements REST API's with axios, CRUD functionality, JSON, MVC design pattern, User Authentication using JWT and bcryptJS, MongoDB with mongoose, State Management using Context API, Styling of the UI with CSS, use of React libraries such as BrowserRouter, React-Router-Dom, Hooks, Bootstrap/Reactstrap and more. 
+
+### Project Developer
+
+**Shaker Kattoula - Full Stack Web Developer - shakerkattoula.com**
+
+### Goal
+Manage and organize your company's budget to potentially improve sales and reduce costs.
+
+### Phases
+* Phase 1: Backend - MongoDB with express API and mongoose, Models, API routes, CRUD functionality.
+* Phase 2: Frontend - React, UI design with CSS and Bootstrap/Reactstrap, connecting frontend to backend via axios.
+* Phase 3: User Authentication - Json Web Token(JWT), bcryptJS, form validations, error handling, auth middleware.
+* Phase 4: Review - Debugging, refactoring, improvements, and documentation.
+* Phase 5: Deployment - Prepare build and deploy to Heroku.
+
+### User Stories
 * As a user, I WANT to be able to register my own account with a name, email and password so that I can have access to my own personal budget tracker.
 * As a user, I WANT to be able to log into my own account with my email and password.
 * As a user, I WANT to be able to log out of my own account.
@@ -15,10 +33,6 @@ I created a "client-install" script to make it easier for you to install all of 
 * As a user, I WANT to be able to delete a single income or expense transaction.
 * As a user, I WANT to be able to see a "balance" total that gets updated every time I submit an income or expense transaction.
 * As a user, I WANT to be able to see individual amount totals for the income transaction and the expense transaction.
-
-## System Requirement Specification (SRS)
-### Overview
-I am a full-stack web developer specializing in the MERN framework and currently seeking opportunities for full-time employment. My goal is to create high-quality web and mobile applications that help to solve real world business problems and engineer creative solutions to excell your company in the marketplace. 
 
 ## Blockers and Challenges
 1. One of the most challenging aspects of this project was properly connecting the frontend to the backend via axios http requests. For example, since the Schema in my Model contained both income and expense transaction items, the "GET_TRANSACTIONS" case in my AppReducer file was returning the payload for both the income and expense transaction items in both the income and expense transaction lists of the UI(does that make sense?). At first I wasn't sure how to deal with this issue so I had two ideas. The first idea was to create two seperate models called IncomeTransaction and ExpenseTransaction to house their individual schema's and then call their individual payloads from the AppReducer. However, I decided to go with my second idea which was quicker, and that was to add a filter inside of the "GET_TRANSACTIONS" case for both the income transaction and the expense transaction. This would still call the payload twice, but filtering out the expenses in the income transaction list and vice versa for the expense transaction list. 
