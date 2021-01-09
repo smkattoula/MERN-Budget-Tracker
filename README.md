@@ -4,7 +4,7 @@ A full-stack application utilizing the MERN framework. This application allows t
 ![Image](https://github.com/smkattoula/smkattoula.github.io/blob/master/assets/img/portfolio/BudgetTrackerPic.png)
 
 ## Installation 
-I created a "client-install" script to make it easier for you to install all of the dependancies so that you don't have to run "npm install" twice for both the server package.json and client package.json. Instead, all you need to do after you have cloned this repo into your text editor is to `cd into the root folder` and run `npm client-install`. This will install all of the dependacies for both server side and client side package.json. You can then run `npm run dev` to start up the nodemon server (for real-time error handling) and the development server (to view the app in localhost on your browser).
+Clone this repo to your text editor and `cd into the root folder`. In the command line, go ahead and run `npm install`. Afterwards, `cd into the frontend folder` and run `npm install` as well. This will install all of the dependacies for both server side and client side package.json. You can then `cd back into the root folder` and run `npm run dev` to start up the nodemon server (for real-time error handling) and the development server (to view the app in localhost on your browser). 
 
 ## System Requirement Specification (SRS)
 ### Overview
